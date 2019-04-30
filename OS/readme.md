@@ -20,7 +20,7 @@ PCB는 특정 **프로세스에 대한 중요한 정보를 저장** 하고 있�
 하는데, 이때 작업의 진행 상황을 모두 PCB에 저장하게 된다. 그리고 다시 CPU를 할당받게 되면 PCB에 
 저장되어있던 내용을 불러와 이전에 종료됐던 시점부터 다시 작업을 수행한다.
 
-![image](https://user-images.githubusercontent.com/36303777/56964310-e652dc80-6b95-11e9-8505-f79c3de5169f.png)
+![image](https://user-images.githubusercontent.com/150x200/36303777/56964310-e652dc80-6b95-11e9-8505-f79c3de5169f.png)
 
 PCB에 저장되는 정보
 - 프로세스 식별자(Process ID. PID) : 프로세스 식별번호
