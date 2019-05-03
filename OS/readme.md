@@ -24,7 +24,7 @@ PCB는 특정 **프로세스에 대한 중요한 정보를 저장** 하고 있�
 
 ![image](https://user-images.githubusercontent.com/36303777/56964310-e652dc80-6b95-11e9-8505-f79c3de5169f.png)
 
-PCB에 저장되는 정보
+##### PCB에 저장되는 정보
 - 프로세스 식별자(Process ID. PID) : 프로세스 식별번호
 - 프로세스 상태 : new, ready, running, waiting, terminated 등의 상태를 저장.
 - 프로그램 카운터 : 프로세스가 다음에 실행할 명령어의 주소
