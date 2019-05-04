@@ -25,7 +25,8 @@ instruction들을 사용자가 사용할 수 있게 해줌. 커널에 접근을 
 하는데, 이때 작업의 진행 상황을 모두 PCB에 저장하게 된다. 그리고 다시 CPU를 할당받게 되면 PCB에 
 저장되어있던 내용을 불러와 이전에 종료됐던 시점부터 다시 작업을 수행한다.
 
-![image](https://user-images.githubusercontent.com/36303777/56964310-e652dc80-6b95-11e9-8505-f79c3de5169f.png){: width="100"}
+<img src="https://user-images.githubusercontent.com/36303777/56964310-e652dc80-6b95-11e9-8505-f79c3de5169f.png" width="300"></img>
+
 
 --------------------------------
 
