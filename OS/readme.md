@@ -13,7 +13,7 @@ instruction들을 사용자가 사용할 수 있게 해줌. 커널에 접근을 
 변수와 같은 임시 자료를 갖는 프로세스 스택과 전역 변수들을 수록하는 데이터 섹션을 포함한다. 
 또한 프로세스는 프로세스 실행 중에 동적으로 할당되는 메모리인 힙을 포함한다. 
 
-![image](https://user-images.githubusercontent.com/36303777/56963825-d8508c00-6b94-11e9-82e4-b1103e7cd23d.png)
+![]({{site.baseurl}}/https://user-images.githubusercontent.com/36303777/56963825-d8508c00-6b94-11e9-82e4-b1103e7cd23d.png)
 
 -------------------------------
 
@@ -25,7 +25,7 @@ instruction들을 사용자가 사용할 수 있게 해줌. 커널에 접근을 
 하는데, 이때 작업의 진행 상황을 모두 PCB에 저장하게 된다. 그리고 다시 CPU를 할당받게 되면 PCB에 
 저장되어있던 내용을 불러와 이전에 종료됐던 시점부터 다시 작업을 수행한다.
 
-![image](https://user-images.githubusercontent.com/36303777/56964310-e652dc80-6b95-11e9-8505-f79c3de5169f.png)
+![image](https://user-images.githubusercontent.com/36303777/56964310-e652dc80-6b95-11e9-8505-f79c3de5169f.png){: width="100"}
 
 --------------------------------
 
@@ -122,4 +122,4 @@ instruction들을 사용자가 사용할 수 있게 해줌. 커널에 접근을 
     
 ---------------------
 
-### 
+###
