@@ -179,10 +179,10 @@ Time Complexity : O(V+E)   vertex개수 + edge개수
 그래프 G의 spanning tree 중 edge weight의 합이 최소인 spanning tree를 말한다. 여기서 말하는 spanning tree란 그래프 G의 모든 vertex 가 cycle없이 연결된 형태를 말한다.
 
 **Kruskal Algotithm**
-초기화 작업으로 edge 없이 vertex 들로만 그래프를 구성한다. 그리고 **weight가 제일 작은 edge부터 검토**한다. 그러기 위해선 **Edge set을 오름차순 으로 sorting 해야한다**. 그리고 가장 작은 weight에 해당하는 edge를 추가하는데 추가할때 그래프에 cycle이 생기지 않는 경우에만 추가한다. spanning tree 가 완성되면 모든 vertex들이 연결된 상태로 종료가 되고 완성될 수 없는 그래프에 대해서는 모든 edge에 대해 판단이 이루어 지면 종료된다.
+초기화 작업으로 edge 없이 vertex 들로만 그래프를 구성한다. 그리고 **weight가 제일 작은 edge부터 검토**한다. 그러기 위해선 **Edge set을 오름차순 으로 sorting 해야한다**. 그리고 가장 작은 weight에 해당하는 edge를 추가하는데 추가할때 그래프에 **cycle이 생기지 않는 경우에만** 추가한다. spanning tree 가 완성되면 모든 vertex들이 연결된 상태로 종료가 되고 완성될 수 없는 그래프에 대해서는 모든 edge에 대해 판단이 이루어 지면 종료된다.
 
 **Cycle 판별법**
 방문체크후 그지점이 방문한 지점인데 시작지점일 경우 cycle.
 
 **Prim Algorithm**
-초기화 과정에서 한개의 vertex로 이루어진 초기그래프 A를 구성한다. 그리고나서 그래프 A내부에있는 vertex로 부터 외부에 있는 vertex사이의 edge를 연결하는데 그 중 가장 작은 weight의 edge를 통해 연결되는 vertex를 추가한다. 어떤 vertex건 간에 상관없이 edge의 weight를 기준으로 연결하는 것이다. 이렇게 연결된 vertex는 그래프 A에 포함된다. 위 과정을 반복하고 모든 vertex들이 연결되면 종료한다.
+초기화 과정에서 한개의 vertex로 이루어진 초기그래프 A를 구성한다. 그리고나서 그래프 **A내부에있는 vertex로 부터 외부에 있는 vertex사이의 edge를 연결하는데 그 중 가장 작은 weight의 edge를 통해 연결되는 vertex를 추가**한다. 어떤 vertex건 간에 상관없이 **edge의 weight를 기준으로 연결**하는 것이다. 이렇게 연결된 vertex는 그래프 A에 포함된다. 위 과정을 반복하고 모든 vertex들이 연결되면 종료한다.
