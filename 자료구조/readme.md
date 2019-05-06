@@ -82,4 +82,30 @@ LinkedList
 ### Red Black Tree
 * 레드블랙 트리가 필요한 이유 : 이진 탐색 트리중에 값이 편향되게 들어 오는 경우가 있다. 그렬경우, 이진 탐색 트리의 검색효율을 나쁘게 하므로, **균형을 바로잡기위해** 레드블랙 트리라는 알고리즘을 사용하도록 한다.
 
-* 레드블랙 트리의 특징
+* **레드블랙 트리의 정의**
+Red-Black Tree 는 다음의 성질을 만족하는 BST이다.
+1. 각 노드는 Red or Black 이라는 색깔을 갖는다.
+2. Root node의 색깔은 무조건 Black이다.
+3. 각 leaf node는 black이다.
+4. 어떤 노드의 색깔이 red라면 두 개의 children 의 색깔은 모두 black이다. black 노드이 자식들은 어느 색깔이든 상관없다.
+5. 각노드에 대해서 노드로부터 descendant leaves 까지의 단순 경로는 모두 같은수의 black node를 포함하고있다. 이를 해당노드의 ```black-height```라고 한다.
+
+
+**레드블랙 트리의 특징**
+
+* 기본적으로 레드블랙 트리는 이진 탐색 트리를 베이스로 하기 때문에 이진 탐색 트리의 특성을 모두 갖는다.
+* 루트 노드부터 리프노드까지의 모든 경로중 최소 경로와 최대 경로의 크기 비율은 2보다 크지 않다. 이러한 상태를 balanced 상태라고 한다.
+* 노드의 child 가 없을 경우 child를 가리키는 포인터는 NIL 값을 저장한다. 이러한 NIL들을 leaf node로 간주한다.
+
+**삽입**
+우선 BST의 특성을 유지하면서 노드를 삽입을 한다. 그리고 삽입된 노드의 색깔을 Red로 지정한다. red로 지정하는 이유는 blakc-height 변경을 최소화 하기 위함이다. 삽입결과 RBT의 특성을 위배시 노드의 색깔을 조정하고, black-height 가 위배되었다면 rotation을 통해 height를 조정한다. 이러한 과정을 통해 RBT의 동일한 height에 존재하는 internal node 들의 Black-height가 같아지게 되고 최소 경로와 최대 경로의 크기 비율이 2 미만으로 유지된다.
+
+**삭제**
+삭제도 삽입과 마찬가지로 BST의 특성을 유지하면서 해당 노드를 삭제한다. 삭제될 노드의 child의 개수에 따라 rotation 방법이 달라지게 된다. 그리고 만약 지워진 노드의 색깔이 balck 이라면 black-height가 1 감소한 경로에 black node가 1개 추가 되도록 rotation하고 노드의 색깔을 조정한다. 지워진 노드의 색깔이 red 라면 violation이 발생하지 않으므로 RBT가 그대로 유지된다.
+
+[참고1 ](https://zeddios.tistory.com/237)
+
+[참고2](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#array-vs-linkedlist)
+
+----------------------------------------
+
