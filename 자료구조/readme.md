@@ -144,6 +144,45 @@ Red-Black Tree 는 다음의 성질을 만족하는 BST이다.
     - right child의 인덱스 = (부모의 인덱스) * 2 +1
     - 부모의 인덱스 = (자식의 인덱스) / 2
 
+------------------------------
 
-    
+### 그래프
 
+**정점과 간선의 집합,그래프**
+트리또한 그래프이고, 그중 사이클이 허용되지 않는 그래프를 말한다.
+
+그래프 관련 용어
+* Undirected Graph : 정점과 간선의 연결관계에 있어서 방향성이 없는 그래프.
+* Directed Graph : 간선에 방향성이 포함되어 있는 그래프.
+
+**Degree**
+Undirected Graph에서 각 정점에 연결된 edge의 개수를 Degree라 한다. Directed Graph 에서는 간선에 방향성이 존재하기 때문에 Degree가 두개로 나뉜다. 각 정점으로부터 나가는 간선의 개수를 Outdegree라 하고, 들어오는 간선의 개수를 indegree라 한다.
+
+#### 그래프를 구현하는 두방법
+* **인접행렬 (adjacent matrix): 정방 행렬을 사용하는 방법**
+해당하는 위치의 value 값을 통해서 vertex 간의 연결 관계를 O(1)으로 파악할 수 있다. Edge 개수와는 무관하개 V^2의 Space Complexity 를 갖는다 Dense graph를 표현할 때 적절한 방법이다.
+
+* **인접 리스트 : 연결리스트를 사용하는 방법**
+vertex의 adjacent list를 확인해봐야 하므로 vertex 간 연결되어 있는지 확인하는데 오래 걸린다. Space Complexity 는 O(E+V)이다. Space graph를 표현하는 데 적당한 방법이다.
+
+#### 그래프 탐색
+**DFS**
+**stack 자료구조를 이용**. 그래프 상에 존재하는 임의의 한 정점으로 부터 연결 되어 있는 한 정점으로만 나아간다는 방법을 우선으로 탐색. 일단 연결된 정점으로 탐색하는 것이다. 연결할 수 있는 정점이 있을 때까지 계속 연결하다가 더이상 연결되지 않은 정점이 없으면 바로 그 전단계의 정점으로 돌아가서 연결 할 수 있는 정점이 있는지 살펴봐야 할 것이다. 갔던 길을 되돌아 오는 상황이 존재하는 미로찾기처럼 구성하면 되는 것이다.
+Time Complexity : O(V+E) vertex개수 + edge 개수 
+**BFS**
+그래프 상에 존재하는 임의의 한 정점으로부터 연결되어 있는 모든 정점으로 나아간다. Tree에서의 Level Order Travelsal 형식으로 진행되는 것이다. BFS에서는 자료구조로 **Queue를 사용**한다. 연락을취할 정점의 순서를 기록하기 위한 것이다. 우선 탐색을 시작하는 정점을 queue에 넣는다. 그리고 dequeue를 하면서 dequeue한느 정점과 간선으로 연결되어 있는 정점들을 enqueue한다. 즉 vertex들을 방문한 순서대로 queue에 저장하는 방법을 사용하는 것이다. 
+Time Complexity : O(V+E)   vertex개수 + edge개수 
+**BFS로 구한 경로는 최단 경로이다.**
+
+----------------
+### Minimum Spanning Tree
+그래프 G의 spanning tree 중 edge weight의 합이 최소인 spanning tree를 말한다. 여기서 말하는 spanning tree란 그래프 G의 모든 vertex 가 cycle없이 연결된 형태를 말한다.
+
+**Kruskal Algotithm**
+초기화 작업으로 edge 없이 vertex 들로만 그래프를 구성한다. 그리고 **weight가 제일 작은 edge부터 검토**한다. 그러기 위해선 **Edge set을 오름차순 으로 sorting 해야한다**. 그리고 가장 작은 weight에 해당하는 edge를 추가하는데 추가할때 그래프에 cycle이 생기지 않는 경우에만 추가한다. spanning tree 가 완성되면 모든 vertex들이 연결된 상태로 종료가 되고 완성될 수 없는 그래프에 대해서는 모든 edge에 대해 판단이 이루어 지면 종료된다.
+
+**Cycle 판별법**
+방문체크후 그지점이 방문한 지점인데 시작지점일 경우 cycle.
+
+**Prim Algorithm**
+초기화 과정에서 한개의 vertex로 이루어진 초기그래프 A를 구성한다. 그리고나서 그래프 A내부에있는 vertex로 부터 외부에 있는 vertex사이의 edge를 연결하는데 그 중 가장 작은 weight의 edge를 통해 연결되는 vertex를 추가한다. 어떤 vertex건 간에 상관없이 edge의 weight를 기준으로 연결하는 것이다. 이렇게 연결된 vertex는 그래프 A에 포함된다. 위 과정을 반복하고 모든 vertex들이 연결되면 종료한다.
