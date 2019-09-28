@@ -186,3 +186,8 @@ Time Complexity : O(V+E)   vertex개수 + edge개수
 
 **Prim Algorithm**
 초기화 과정에서 한개의 vertex로 이루어진 초기그래프 A를 구성한다. 그리고나서 그래프 **A내부에있는 vertex로 부터 외부에 있는 vertex사이의 edge를 연결하는데 그 중 가장 작은 weight의 edge를 통해 연결되는 vertex를 추가**한다. 어떤 vertex건 간에 상관없이 **edge의 weight를 기준으로 연결**하는 것이다. 이렇게 연결된 vertex는 그래프 A에 포함된다. 위 과정을 반복하고 모든 vertex들이 연결되면 종료한다.
+----------------------------------------
+
+## Sorting
+
+[기본정렬 알고리즘 참고](https://hsp1116.tistory.com/33)
