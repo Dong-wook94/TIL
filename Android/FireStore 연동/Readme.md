@@ -1,5 +1,7 @@
 # FireStore 연동
 > FireStore 연동시 발생 한 주요 에러 대처법에 대하여 정리해 보았습니다.
+
+
 ## 개발 환경 설정
 Cloud Firestore Android 라이브러리를 app/build.gradle 파일에 추가합니다.
 ~~~gradle  
