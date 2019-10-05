@@ -141,6 +141,50 @@ IP 뒤에 /24라는 표현이 1이 24개 있다는 뜻입니다.
 
 1은 네트워크 영역으로 사용하겠다는 뜻이고 0은 호스트 IP로 사용하겠다는 뜻입니다.
 
+----------------------------
+
+## OSI 7계층
+
+> 일단 간단히 정리후 추후 자세히 정리할 예정
+
+### 7계층 - 응용계층(Application)
+
+OSI 7계층 중 최상위 계층이며, 사용자가 직접 눈으로 보고 실제로 작업을 하는 계층이다. `웹브라우저, HTTP, FTP, WWW, Telnet, SMTP, POP` 등의 사용자와 직접적으로 상호작용 하는 모든 `응용프로그램`들이 속한다.
+
+
+
+
+
+
+
+### 6계층 - 표현계층(Presentation)
+
+표현계층은 data의 foramt을 정의한다. 일반적으로 응용프로그램형식을 준비 또는 네트워크 형식으로 변환하거나 네트워크 형식을 응용프로그램 형식으로 변환하는 것을 나타낸다. 
+
+서로다른 환경의 컴퓨터와 Application들이 data를 서로 이해 할수있게 도와주는 계층.
+
+### 5계층 - 세션 계층(Session)
+
+통신의 일을 책임지고 있는 계층이다. 2대의 기기, 컴퓨터 또는 서버간에 통신을 하기 위해서는 세션을 만들어야 하는데 이 작업이 여기서 처리된다.
+
+네트워크 연결을 성립, 제어와 운영, 연결의 종료를 책임진다. 또 각각의 알맞은 Application으로 Data를 보내기 위해서는 Applicaiton으로부터 들어오는 Data들을 분리해서 유지해주는 기능을 수행한다. OS가 이 계층에 속한다.
+
+### 4계층 - 전송계층(Transport)
+
+전송 계층은 Data의 전송을 담당한다. 보낼 데이터의 용량과 속도, 목적지등을 처리한다. 대표적으로 TCP와 UDP가 있다. 기기의 IP 주소가 여기서 작동한다. Data가 잘 전송되고 있는지 확인하고 만약 중간에 에러가 발생하면 이를 알아내서 다시 에러난 부분을 재전송해준다. (TCP의 경우에만)
+
+### 3계층 - 네트워크 계층(Network)
+
+네트워크 계층의 가장 중요한 일은 패킷을 목적지까지 가장 빠른 길로 전송하는 역할. 이계층에서 사용되는 장비로 Router가 있다. 여기서는 에러처리를 하지않는다(상위계층에서 해결해주기 때문에). 이 네트워크 계층에서 사용되는 프로토콜로는 IP,IPX,ICMP,ARP 등이 있다.
+
+### 2계층 - 데이터 링크 계층(Data Link)
+
+데이터의 물리적인 전송(직접 연결된 노드간)을 담당하고, Error Notification, Flow Control등을 다룬다. 데이터 전송시 에러가 발생하면 데이터 링크계층에서 검출을하고 전송계층에서 그 에러를 수정한다. 데이터링크 계층에서 사용되는 장비로는 Bridge, Switch가 있다.
+
+### 1계층 - 물리계층(Physical)
+
+물리 계층은 Data를 전기신호로 바꿔주는 역할을 한다. 케이블 종류, 무선주파수, 핀배치, 전압, 물리 요건등이 포함된다. 
+
 
 
 
@@ -152,6 +196,6 @@ IP 뒤에 /24라는 표현이 1이 24개 있다는 뜻입니다.
 * 네트워크 면접 정리 자료 : https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Network
 * TCP 3-way handshaking과 4-way handshaking : https://gmlwjd9405.github.io/2018/09/19/tcp-connection.html
 * 3-way-handshake & 4-way-handshake : https://asfirstalways.tistory.com/356
-
 * Nagle 알고리즘 : http://egloos.zum.com/depiness/v/772710
 * 서브넷 마스크 : https://limkydev.tistory.com/166
+* OSI 7계층 : https://jw3461.tistory.com/4
