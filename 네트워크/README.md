@@ -185,6 +185,70 @@ OSI 7계층 중 최상위 계층이며, 사용자가 직접 눈으로 보고 실
 
 물리 계층은 Data를 전기신호로 바꿔주는 역할을 한다. 케이블 종류, 무선주파수, 핀배치, 전압, 물리 요건등이 포함된다. 
 
+-----
+
+## REST 와 REST API
+
+### REST의 정의
+
+* "Representational State Transfer"의 약자
+  * 자원을 이름으로 구분하여 해당 자원의 상태를 주고 받는 모든것.
+  * 자원(resource)의 표현(representation)에 의한 상태전달.
+  * JSON 혹은 XML을 통해 데이터를 주고 받는 것이 일반적이다.
+  * 데이터가 요청되어지는 시점에서 자원의 상태(정보)를 전달한다.
+* 월드 와이드 웹(www)과 같은 분산 하이퍼미디어 시스템을 위한 소프트웨어 개발 아키텍처의 한 형식
+  * REST는 기본적으로 웹의 기존 기술과 HTTP 프로토콜을 그대로 활용하기 때문에 **웹의 장점을 최대한 활용할 수 있는 아키텍처 스타일**이다.
+  * REST는 네트워크 상에서 Client와 Server 사이의 통신방식 중 하나이다.
+* REST의 구체적인 개념.
+  * HTTP URI(Uniform Resource Identifier)를통해 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미한다. 
+    * CRUD Operation 
+      * Create : 생성(POST)
+      * Read : 조회(GET)
+      * Update : 수정(PUT)
+      * Delete : 삭제(DELETE)
+      * HEAD : header 정보 조회 (HEAD)
+
+
+
+####  REST의 장단점 
+
+* 장점 
+  * HTTP 프로토콜의 인프라를 그대로 사용하므로 REST API 사용을 위한 별도의 인프라를 구축할 필요가 없다.
+  * HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용이 가능하다.
+  * Hypermedia API 의 기본을 충실히 지키면서 범용성을 보장한다.
+  * REST API 메시지가 의도하는 바를 명확하게 나타내므로 의도하는 바를 쉽게 파악할 수 있다.
+  * 서버와 클라이언트의 역할을 명확하게 분리한다.
+* 단점
+  * 표준이 존재하지 않는다.
+  * 사용할 수 있는 메소드가 4가지 밖에없다.
+    * HTTP Method 형태가 제한적이다.
+  * 구형 브라우저가 아직 제대로 지원해주지 목하는 부분이 존재한다.
+    * PUT, DELETE를 사용하지 못하는점.
+    * pushState를 지원하지 않는 점.
+
+
+
+#### REST의 특징
+
+1. Server-Client(서버 클라이언트 구조)
+   * 자원이 있는 쪽이 Server, 자원을 요청하는 쪽이 Client가 된다.
+     * REST Server : API를 제공하고 비즈니스 로직 처리 및 저장을 책임진다.
+     * Client : 사용자 인증이나 context(세션, 로그인 정보)등을 직접 관리하고 책임진다. 
+   * 서로 간 의존성이 줄어든다.
+2. Stateless(무상태)
+   * HTTP 프로토콜은 Stateless Protocol이므로 REST 역시 무상태성을 갖는다.
+   * Client의 context를 Server에 저장하지 않는다.
+     * 즉, 세션과 쿠키와 같은 context 정보를 신경쓰지 않아도 되므로 구현이 단순해진다.
+   * Server는 각각의 요청을 완전히 별개의 것으로 인식하고 처리한다.
+     * 각 API 서버는 Client의 요청만을 단순 처리한다.
+     * 즉, 이전 요청이 다음 요청의 처리에 연관되어서는 안된다.
+     * 물론 이전 요청이 DB를 수정하여 DB에 의해 바뀌는 것은 허용한다.
+     * Server의 처리방식에 일관성을 부여하고 부담이 줄어들며, 서비스의 자유도가 높아진다.
+3. Cacheable(캐시 처리 가능)
+4. Layered System(계층화)
+5. Code-On-Demand(optional)
+6. Uniform Interface(인터페이스 일관성)
+
 
 
 
@@ -199,3 +263,4 @@ OSI 7계층 중 최상위 계층이며, 사용자가 직접 눈으로 보고 실
 * Nagle 알고리즘 : http://egloos.zum.com/depiness/v/772710
 * 서브넷 마스크 : https://limkydev.tistory.com/166
 * OSI 7계층 : https://jw3461.tistory.com/4
+* REST : https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
