@@ -14,5 +14,4 @@
 3. 스프링/ 웹공부
    1. `초보 웹 개발자를 위한 스트링 5 프로그래밍 입문 - 최범균 저  ` 도서를 읽고 공부를 진행중입니다.
       * [스프링 스터디](https://github.com/Dong-wook94/TIL/tree/master/스프링)
-   2. 부스트 코스 웹 프로그래밍 강좌를 수강중입니다. 
-      * [부스트코스 강좌 복습](https://github.com/Dong-wook94/TIL/tree/master/웹%20프로그래밍(부스트코스))
+   
